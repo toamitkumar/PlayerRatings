@@ -8,7 +8,7 @@ class PlayerDetailsViewController < UITableViewController
 	def viewDidLoad
 		super
 
-		self.detailLabel.text = game
+		self.detailLabel.text = game ? game.name : "Detail"
 	end
 
 	def done(sender)
@@ -33,7 +33,7 @@ class PlayerDetailsViewController < UITableViewController
 	def didSelectGame(controller, game)
 		@game = game
 
-		self.detailLabel.text = game
+		self.detailLabel.text = game.name
 		self.navigationController.popViewControllerAnimated(true)
 	end
 
